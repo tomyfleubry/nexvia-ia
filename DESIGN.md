@@ -99,13 +99,13 @@ components:
 
 **Creative North Star: "La ruta hacia tu siguiente paso"**
 
-La ruta turquesa del hero se dibuja al entrar y reaparece como conexión entre las tres etapas. La identidad existente sigue siendo la autoridad: petróleo, azul y turquesa, logo actual y Sora con Inter. La página suma demostración concreta mediante siete muestras navegables.
+La portada concentra el movimiento en una superficie azul debajo del titular. La conexión entre etapas, los filtros y la simulación de WhatsApp usan animaciones breves para mostrar el orden o confirmar una interacción. La identidad usa petróleo, azul y turquesa, el logo actual y Sora con Inter.
 
 La referencia [MotionSites](https://motionsites.ai/) se usa por su lógica de biblioteca visual, filtros y piezas de distinta escala. Los efectos pedidos se interpretan de forma ligera con CSS y el JavaScript nativo existente: no se copian textos, imágenes ni implementaciones de la referencia.
 
 **Key Characteristics:**
-- Hero de marca con ruta SVG y énfasis azul–turquesa.
-- Servicios bento; Agentes de IA destacado con conversación ilustrativa.
+- Hero centrado con superficie azul animada en WebGL y diagnóstico por WhatsApp.
+- Servicios con una simulación de reserva en Agentes de IA.
 - Catálogo por rubro con fotos reales de los heroes dentro de ventanas de navegador.
 - Proceso conectado, contacto en panel translúcido y wordmark de fondo.
 - Paridad entre modo claro y oscuro; movimiento reducido completo.
@@ -134,7 +134,7 @@ La referencia [MotionSites](https://motionsites.ai/) se usa por su lógica de bi
 
 Sora500/600/700/800 para marca, titulares y nombres de muestras; Inter400/500/600/700 para lectura. Se conserva el enlace Google Fonts existente.
 
-Hero hasta 50px, móvil 34px; H2 hasta 40px / 30px. Los títulos de ejemplos usan Sora 23px / 700 / 1.26 y pasan a 24px en móvil. Los servicios usan 21px / 700 / 1.3; Agentes de IA destacado usa 27px, o 25px en móvil. Texto general 16.5px, introducciones 18px y metadatos 13–15px. Tracking mínimo -.025em en titulares; cifras tabulares. Los textos comerciales, listas y datos se conservan; solo se actualizan funciones antiguas de muestras, con autorización de Tomas.
+El titular de la portada usa Sora 500 con un máximo de 102 px en escritorio y 67 px en móvil. Los H2 llegan a 40 px en escritorio y 30 px en móvil. Los títulos de ejemplos usan Sora 23 px y peso 700. Los servicios usan 21 px y peso 700. El destacado de Agentes de IA usa 27 px en escritorio y 25 px en móvil. El texto general usa Inter a 16.5 px.
 
 ## Layout
 
@@ -146,7 +146,7 @@ Servicios: grilla de tres columnas, Agentes ocupa dos y contiene texto más mini
 
 ## Elevation & Depth
 
-El vidrio se limita a la insignia del hero y al panel de contacto pedido en el brief. Blur12px /16px, con respaldo de color sólido translúcido si no está disponible. Sin video ni fondos de reproducción automática.
+El panel de contacto conserva un fondo translúcido. La portada usa un lienzo WebGL y un fondo de respaldo definido en CSS.
 
 Las muestras se separan por un borde, no por sombra en reposo. Hover eleva3px y acerca levemente la foto. El flotante conserva sombra suave 0 8px 24px rgba(0,0,0,.22).
 
@@ -157,10 +157,10 @@ Ventanas de ejemplos22px, barra superior fina y tres puntos decorativos; panel d
 ## Components
 
 ### Hero y cinta
-Mismos textos, foto incrustada y geometría de ruta existentes. Se dibuja el path una vez al cargar; énfasis de titular con degradado muy suave. La insignia adopta vidrio. Cinta lenta con ocho rubros, duplicado oculto a lectores de pantalla y control de pausa. Sin JS o movimiento reducido, queda estática.
+El titular «Recuperá tus horas» y el diagnóstico se centran sobre fondo oscuro. Una escena original de cintas 3D ocupa la parte inferior, con un botón de pausa y un cuadro estático en movimiento reducido. La escena pausa al quedar fuera de vista. La cinta de ocho rubros conserva su propio control de pausa.
 
 ### Servicios bento
-Cinco tarjetas y sus listas originales. Agentes se presenta primero en una celda doble, con mini-chat rotulado Conversación ilustrativa. No es atención real, testimonio ni dato de cliente. El resto de la página conserva sus bloques y copy.
+Cinco tarjetas y sus listas originales. Agentes se presenta primero en una celda doble con una simulación por WhatsApp. Los mensajes aparecen en orden hasta confirmar un turno ficticio. El botón «Repetir» reinicia la secuencia. Con movimiento reducido o JavaScript desactivado, la conversación se muestra completa.
 
 ### Catálogo de ejemplos
 Filtros nativos con aria-pressed; estado anunciado y tarjetas hidden fuera de selección. Sin JS se muestran las siete. El recorte de cada hero se obtiene en navegador a430px, se optimiza en WebP y se incrusta en base64. Ventana con zoom al hover, foco y toque; botón Ver el ejemplo en pestaña nueva. No se incorporan fotos de otros sitios.
@@ -172,7 +172,7 @@ Tres pasos actuales, números con degradado de marca y conector que se revela al
 Un símbolo i-wa de viewBox24 con el path literal del brief. Usos de20px en botones,28px en flotante verde58px. Blanco sobre botones oscuros o verdes; sin stroke. Se conserva el mensaje de diagnóstico existente. La banda nueva lo reutiliza.
 
 ### Movimiento y accesibilidad
-Reveal coordinado600ms, demoras escalonadas hasta180ms. Brillo discreto en hover y foco. Cinta44s, pausada por control, hover y foco. Proceso850ms; ruta1400ms. Todo se desactiva con prefers-reduced-motion; contenido visible aunque falle JS. Foco visible, selección y scrollbars desde la paleta. Se verifican claro/oscuro y móvil/escritorio en una misma tanda.
+Al seleccionar un rubro, las capturas aparecen en una transición de 280 ms con demoras de hasta 102 ms. La línea de «Cómo trabajo» conecta los pasos de izquierda a derecha en escritorio y de arriba hacia abajo en móvil. El proceso y la simulación se reproducen al entrar en vista. Los estados finales se muestran con `prefers-reduced-motion`.
 
 ## Do's and Don'ts
 
