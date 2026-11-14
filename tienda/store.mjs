@@ -2,6 +2,7 @@ import { products, getVariant, money, shippingCents } from "./catalog.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const catalog = $("#products");
+const lookbook = $("#lookbook-pieces");
 const detail = $("#product-dialog");
 const drawer = $("#bag-dialog");
 const categories = ["Todas", ...new Set(products.map((product) => product.category))];
@@ -165,10 +166,21 @@ $("#load-more").addEventListener("click", () => {
   renderProducts();
   catalog.querySelectorAll("[data-product]")[previous]?.focus();
 });
-catalog.addEventListener("click", (event) => {
+catalog.addEventListener("click", openProduct);
+if (lookbook) {
+  lookbook.innerHTML = ["tee", "denim", "tote"].map((id) => {
+    const product = products.find((item) => item.id === id);
+    return '<li><button class="lookbook-piece" type="button" data-product="' + id +
+      '" aria-haspopup="dialog"><span>' + product.name + '</span><span>' + money(product.cents) +
+      '</span><span class="piece-arrow" aria-hidden="true">↗</span></button></li>';
+  }).join("");
+  lookbook.addEventListener("click", openProduct);
+}
+
+function openProduct(event) {
   const trigger = event.target.closest("[data-product]");
   if (trigger) showProduct(products.find((product) => product.id === trigger.dataset.product), trigger);
-});
+}
 $("[data-show]").addEventListener("click", (event) => changeCategory(event.currentTarget.dataset.show));
 $("#bag").addEventListener("click", () => { lastTrigger = $("#bag"); renderCart(); drawer.showModal(); });
 for (const dialog of [detail, drawer]) {
