@@ -4,9 +4,11 @@ const $ = (selector) => document.querySelector(selector);
 const catalog = $("#products");
 const detail = $("#product-dialog");
 const drawer = $("#bag-dialog");
-const categories = ["Todas", "Remeras", "Capas", "Pantalones"];
+const categories = ["Todas", ...new Set(products.map((product) => product.category))];
 const cartKey = "orla-form-bag-v1";
 let selectedCategory = "Todas";
+let displayLimit = 9;
+const pageSize = 9;
 let cart = restoreCart();
 let toastTimer;
 let demoFinished = false;
@@ -39,8 +41,10 @@ function renderProducts() {
   const visible = products.filter((product) => selectedCategory === "Todas" || product.category === selectedCategory);
   if (order === "low") visible.sort((a, b) => a.cents - b.cents);
   if (order === "high") visible.sort((a, b) => b.cents - a.cents);
-  $("#product-count").textContent = visible.length + " prendas";
-  catalog.innerHTML = visible.map((product) =>
+  const shown = visible.slice(0, displayLimit);
+  $("#product-count").textContent = visible.length + (visible.length === 1 ? " producto" : " productos");
+  $("#load-more").hidden = shown.length >= visible.length;
+  catalog.innerHTML = shown.map((product) =>
     '<article class="product"><button class="product-button" type="button" data-product="' + product.id +
     '" aria-haspopup="dialog"><span class="product-photo"><img src="img/' + product.id + '.webp" alt="' +
     product.name + ' · ' + product.color + '" width="512" height="512" loading="lazy"></span>' +
@@ -51,6 +55,7 @@ function renderProducts() {
 
 function changeCategory(value) {
   selectedCategory = value;
+  displayLimit = pageSize;
   for (const button of $("#categories").children) button.setAttribute("aria-pressed", button.dataset.category === value);
   renderProducts();
 }
@@ -150,7 +155,16 @@ $("#categories").addEventListener("click", (event) => {
   const button = event.target.closest("[data-category]");
   if (button) changeCategory(button.dataset.category);
 });
-$("#sort").addEventListener("change", renderProducts);
+$("#sort").addEventListener("change", () => {
+  displayLimit = pageSize;
+  renderProducts();
+});
+$("#load-more").addEventListener("click", () => {
+  const previous = displayLimit;
+  displayLimit += pageSize;
+  renderProducts();
+  catalog.querySelectorAll("[data-product]")[previous]?.focus();
+});
 catalog.addEventListener("click", (event) => {
   const trigger = event.target.closest("[data-product]");
   if (trigger) showProduct(products.find((product) => product.id === trigger.dataset.product), trigger);
