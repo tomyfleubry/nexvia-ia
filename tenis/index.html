@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-type="place">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d2e22">
+  <meta name="description" content="Doral Open Tennis. A first-edition tournament for the Doral and Miami tennis community.">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Doral Open Tennis — First Edition</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fraunces.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Doral Open Tennis home">Doral Open<span>.</span></a>
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+    <nav id="navigation" aria-label="Main navigation" hidden>
+      <a href="#edition">First edition</a>
+      <a href="#draw">The draw</a>
+      <a href="#on-court">On court</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img src="assets/hero.webp" alt="A tennis player with her racket at the edge of a green court at blue hour" width="1600" height="900" fetchpriority="high">
+      </div>
+      <div class="hero-copy">
+        <p class="hero-line">The game comes to Doral.</p>
+        <p class="hero-edition">First edition</p>
+        <h1 id="hero-title"><span>Doral Open</span><span>Tennis<span class="hero-dot" aria-hidden="true"></span></span></h1>
+        <div class="hero-note">
+          <p class="label"><i></i>Doral, Florida</p>
+          <p>A singles tournament for the Doral and Miami tennis community. Sixteen players take the court.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="edition" class="edition" aria-labelledby="edition-title">
+      <div class="edition-images" aria-hidden="true">
+        <img src="assets/gear.webp" alt="" loading="lazy"><img src="assets/portrait.webp" alt="" loading="lazy"><img src="assets/tenista.webp" alt="" loading="lazy"><img src="assets/court.webp" alt="" loading="lazy"><img src="assets/trophy.webp" alt="" loading="lazy"><img src="assets/hero.webp" alt="" loading="lazy"><img src="assets/tenista.webp" alt="" loading="lazy"><img src="assets/gear.webp" alt="" loading="lazy"><img src="assets/court.webp" alt="" loading="lazy"><img src="assets/portrait.webp" alt="" loading="lazy"><img src="assets/hero.webp" alt="" loading="lazy"><img src="assets/trophy.webp" alt="" loading="lazy">
+      </div>
+      <div class="edition-inner">
+        <h2 id="edition-title"><span>One city.</span><em>One court.</em></h2>
+        <div class="ball" aria-hidden="true">
+          <div class="ball-still"></div>
+          <canvas id="tennis-ball" width="480" height="480"></canvas>
+        </div>
+        <p class="edition-location label">Doral <span></span> Miami</p>
+      </div>
+    </section>
+
+    <section id="draw" class="draw" aria-labelledby="draw-title">
+      <h2 class="label" id="draw-title"><i></i><span></span>The draw</h2>
+      <ol class="draw-list">
+        <li><a href="#groups"><span class="draw-n">01</span><span class="draw-name">Group <em>stage</em></span><img src="assets/court.webp" alt="" loading="lazy"><span class="draw-meta">16 players</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="#semifinals"><span class="draw-n">02</span><span class="draw-name">The <em>semifinals</em></span><img src="assets/tenista.webp" alt="" loading="lazy"><span class="draw-meta">4 players</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+        <li><a href="#final"><span class="draw-n">03</span><span class="draw-name">The <em>final</em></span><img src="assets/trophy.webp" alt="" loading="lazy"><span class="draw-meta">2 players</span><span class="arrow" aria-hidden="true">↗</span></a></li>
+      </ol>
+    </section>
+
+    <div id="on-court" class="chapters">
+      <section id="groups" class="chapter chapter-field" aria-labelledby="groups-title">
+        <div class="chapter-copy"><p class="label">Group stage</p><h2 id="groups-title">Find your <em>rhythm.</em></h2><p>Four groups of four. Three matches to get to know your opponents and earn a place in the next round.</p></div>
+        <img src="assets/court.webp" alt="Two players meeting across the net on a court surrounded by palms" width="764" height="508" loading="lazy">
+      </section>
+
+      <section id="semifinals" class="chapter chapter-split" aria-labelledby="semis-title">
+        <img src="assets/tenista.webp" alt="Tennis player moving into a backhand on a green hard court" width="1440" height="960" loading="lazy">
+        <div class="chapter-copy"><p class="label">Semifinals</p><h2 id="semis-title">The last <em>four.</em></h2><p>Each group winner advances. Two matches decide who plays for the title.</p></div>
+      </section>
+
+      <section id="final" class="chapter chapter-final" aria-labelledby="final-title">
+        <div class="chapter-copy"><p class="label">The final</p><h2 id="final-title">Play for <em>the title.</em></h2><p>Two finalists, one last match, and a trophy to take home.</p></div>
+        <img src="assets/trophy.webp" alt="Silver tennis trophy waiting on a courtside bench" width="764" height="508" loading="lazy">
+      </section>
+    </div>
+
+    <section class="journal" aria-labelledby="journal-title">
+      <div class="journal-image"><img src="assets/portrait.webp" alt="A player in an ivory cap preparing beside the net" width="764" height="508" loading="lazy"></div>
+      <div class="journal-copy"><h2 id="journal-title">Beyond<br><em>the baseline.</em></h2><p>New opponents and familiar courts. A chance for the local tennis community to play together.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div><p class="label"><i></i>Doral, Florida</p><p class="footer-line">See you <em>on court.</em></p></div>
+      <nav aria-label="Footer">
+        <a href="#edition">First edition</a><a href="#draw">The draw</a><a href="#top">Back to top ↑</a>
+      </nav>
+    </div>
+    <p class="footer-credit">Doral Open Tennis · Nexvia portfolio concept</p>
+    <div class="footer-mark" aria-hidden="true">DORAL</div>
+  </footer>
+</body>
+</html>
